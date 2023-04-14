@@ -1,8 +1,9 @@
 package parking.model;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Parking implements Comparable<Vehiculo> {
+public class Parking{
 	Scanner sc = new Scanner(System.in);
 
 	private Vehiculo[] vehiculos;
@@ -37,25 +38,29 @@ public class Parking implements Comparable<Vehiculo> {
 
 	}
 
-	@Override
-	public int compareTo(Vehiculo o) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+
+	public String ordenarMarcaModelo() {
+		Arrays.sort(this.vehiculos,new OrdenarMarcaModelo());
+		return Arrays.toString(vehiculos);
 	}
 
-	public int ordenarMarcaModelo() {
-		return 0;
-
+	public String ordenarTipoCombustible(Vehiculo v1,Vehiculo v2) {
+		Arrays.sort(this.vehiculos,new OrdenarTipoCombustible());
+		return Arrays.toString(vehiculos);
+		
 	}
 
-	public int ordenarTipoCombustible() {
-		return 0;
+	public String ordenarMatricula(Vehiculo v1,Vehiculo v2) {
+		Arrays.sort(this.vehiculos,new OrdenarMatricula());
+		return Arrays.toString(vehiculos);
 
 	}
+	public String ordenarFehca(Vehiculo v1,Vehiculo v2) {
+		Arrays.sort(vehiculos);
+		return Arrays.toString(vehiculos);
 
-	public int ordenarMatricula() {
-		return 0;
+	}	
 
-	}
-
+	
 }
